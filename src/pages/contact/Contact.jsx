@@ -91,7 +91,7 @@ export default function Contact() {
             <BiLogoInstagram style={{ fontSize: "18px" }} /> abrasivosmesopotamica
           </div>
           <div>
-            <BiEnvelope style={{ fontSize: "18px" }} /> info@abrasivosmesopotamica.com.ar / ventas@abrasivosmesopatamica.com.ar
+            <BiEnvelope style={{ fontSize: "18px" }} /> info@abrasivosmesopotamica.com / ventas@abrasivosmesopatamica.com.ar
           </div>
           {/* <div>
             <BiMap style={{ fontSize: "18px" }} /> Maipú 1820, Rosario, Santa Fe
