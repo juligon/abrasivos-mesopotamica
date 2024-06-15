@@ -20,7 +20,7 @@ export default function Footer() {
 					<a href="https://www.instagram.com/abrasivosmesopotamica" target="_blank" rel="noreferrer">
 						<BiLogoInstagram className="icon" />
 					</a>
-					<a href="mailto:info@abrasivosmesopotamica.com.ar" target="_blank" rel="noreferrer">
+					<a href="mailto:info@abrasivosmesopotamica.com" target="_blank" rel="noreferrer">
 						<BiEnvelope className="icon" />
 					</a>
 				</div>
