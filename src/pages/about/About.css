@@ -1,0 +1,16 @@
+.about {
+  min-height: 88vh;
+  height: auto;
+  width: 100%;
+}
+
+.imagen {
+	min-height: 350px;
+	height: auto;
+	width: auto;
+  background-image: url("../../assets/disco-abrasivo.png");
+  background-position: center;
+  background-size:contain;
+  background-repeat: no-repeat;
+  object-fit: contain;
+}

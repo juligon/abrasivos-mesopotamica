@@ -1,0 +1,50 @@
+.header {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.5)),
+		url("../../assets/abrasivos-1.jpg");
+	min-height: 88vh;
+  height: auto;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+	/* filter: brightness(0.5); */
+}
+
+.marcas {
+	background-color: #D8DBE2;
+	width: 100%;
+	height: auto;
+}
+
+.logo {
+	height: 45px;
+}
+
+@media screen and (max-width: 990px) {
+	.logo {
+		height: 40px;
+	}
+
+}
+
+@media screen and (max-width: 750px) {
+	.logo {
+		height: 30px;
+	}
+
+}
+
+@media screen and (max-width: 499px) {
+	.header {
+		min-height: 100vh;
+		height: auto;
+		width: 100%;
+
+	}
+
+	.logo {
+		height: 24.75px;
+	}
+	
+
+}
+
