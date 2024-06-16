@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { BiLogoWhatsapp, BiPhone, BiLogoInstagram, BiEnvelope } from "react-icons/bi";
-//const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 export default function Contact() {
   const [input, setInput] = useState({
@@ -21,7 +20,6 @@ export default function Contact() {
       [name]: value,
     }));
 
-    // Validate the form every time an input changes
     const validationErrors = validate({ ...input, [name]: value });
     setErrors(validationErrors);
     setHasErrors(Object.keys(validationErrors).length > 0);
@@ -53,26 +51,34 @@ export default function Contact() {
     setErrors({});
     setHasErrors(false);
 
-    const form = e.target;
-    const formData = new FormData(form);
+    const formData = new FormData();
+    formData.append("name", input.name);
+    formData.append("email", input.email);
+    formData.append("subject", input.subject);
+    formData.append("message", input.message);
 
-    fetch("/", {
+    fetch("/send_mail.php", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      body: formData,
     })
-      .then(() => {
-        setSubmitted(true);
-        setInput({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
+      .then((response) => response.text())
+      .then((data) => {
+        if (data.includes("Gracias")) {
+          setSubmitted(true);
+          setInput({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
+        } else {
+          setHasErrors(true);
+          alert(data);
+        }
       })
       .catch((error) => {
         setHasErrors(true);
-        alert(error);
+        alert("Hubo un error al enviar el formulario. Intenta de nuevo más tarde.");
       });
   };
 
@@ -93,9 +99,6 @@ export default function Contact() {
           <div>
             <BiEnvelope style={{ fontSize: "18px" }} /> info@abrasivosmesopotamica.com / ventas@abrasivosmesopatamica.com.ar
           </div>
-          {/* <div>
-            <BiMap style={{ fontSize: "18px" }} /> Maipú 1820, Rosario, Santa Fe
-          </div> */}
         </p>
         <div className="col-12 col-md-6 pb-4">
           <iframe
@@ -108,8 +111,7 @@ export default function Contact() {
           ></iframe>
         </div>
         <div className="col-12 col-md-6 pb-4">
-          <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
-            <input type="hidden" name="form-name" value="contact" />
+          <form name="contact" method="POST" onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="name" className="form-label">
                 Nombre
