@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BiLogoWhatsapp, BiPhone, BiLogoInstagram, BiEnvelope } from "react-icons/bi";
+//const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 export default function Contact() {
   const [input, setInput] = useState({
@@ -19,12 +20,12 @@ export default function Contact() {
       ...prevInput,
       [name]: value,
     }));
-
+  
     const validationErrors = validate({ ...input, [name]: value });
     setErrors(validationErrors);
     setHasErrors(Object.keys(validationErrors).length > 0);
   };
-
+  
   const validate = (fields) => {
     const newErrors = {};
     if (!fields.name) newErrors.name = "El nombre es obligatorio.";
@@ -78,7 +79,7 @@ export default function Contact() {
       })
       .catch((error) => {
         setHasErrors(true);
-        alert("Hubo un error al enviar el formulario. Intenta de nuevo más tarde.");
+        alert(error);
       });
   };
 
