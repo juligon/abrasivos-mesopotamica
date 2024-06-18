@@ -78,7 +78,7 @@ export default function Contact() {
   // };
 
   return (
-    <div className="container-fluid contact">
+    <div className="container-fluid contact" style={{paddingBottom: "2rem"}}>
       <div className="row">
         <p className="fs-4 fw-semibold">Contacto</p>
         <p className="fs-6 info">
