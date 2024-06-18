@@ -83,19 +83,19 @@ export default function Contact() {
         <p className="fs-4 fw-semibold">Contacto</p>
         <p className="fs-6">
           <div>
-            <BiLogoWhatsapp style={{ fontSize: "16px" }} /> (0341) 155709575
+            <BiLogoWhatsapp style={{ fontSize: "18px" }} /> (0341) 155709575
           </div>
           <div>
-            <BiPhone style={{ fontSize: "16px" }} /> (0341) 485 6263
+            <BiPhone style={{ fontSize: "18px" }} /> (0341) 485 6263
           </div>
           {/* <div>
-            <BiLogoInstagram style={{ fontSize: "16px" }} /> abrasivosmesopotamica
+            <BiLogoInstagram style={{ fontSize: "18px" }} /> abrasivosmesopotamica
           </div> */}
           <div>
-            <BiMap style={{ fontSize: "16px" }} /> Maipú 1820, Rosario, Santa Fe
+            <BiMap style={{ fontSize: "18px" }} /> Maipú 1820, Rosario, Santa Fe
           </div>
           <div>
-            <BiEnvelope style={{ fontSize: "16px" }} /> info@abrasivosmesopotamica.com / ventas@abrasivosmesopatamica.com.ar
+            <BiEnvelope style={{ fontSize: "18px" }} /> info@abrasivosmesopotamica.com / ventas@abrasivosmesopatamica.com.ar
           </div>
         </p>
         <div className="col-12">
