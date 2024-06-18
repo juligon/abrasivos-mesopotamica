@@ -1,5 +1,5 @@
 //import { useState } from "react";
-import { BiLogoWhatsapp, BiPhone, BiLogoInstagram, BiEnvelope, BiMap } from "react-icons/bi";
+import { BiLogoWhatsapp, BiPhone, BiEnvelope, BiMap } from "react-icons/bi";
 import "./Contact.css"
 //const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
@@ -81,16 +81,16 @@ export default function Contact() {
     <div className="container-fluid contact" style={{paddingBottom: "2rem"}}>
       <div className="row">
         <p className="fs-4 fw-semibold">Contacto</p>
-        <p style={{fontSize: "12px"}}>
+        <p className="fs-6">
           <div>
             <BiLogoWhatsapp style={{ fontSize: "16px" }} /> (0341) 155709575
           </div>
           <div>
             <BiPhone style={{ fontSize: "16px" }} /> (0341) 485 6263
           </div>
-          <div>
+          {/* <div>
             <BiLogoInstagram style={{ fontSize: "16px" }} /> abrasivosmesopotamica
-          </div>
+          </div> */}
           <div>
             <BiMap style={{ fontSize: "16px" }} /> Maipú 1820, Rosario, Santa Fe
           </div>
