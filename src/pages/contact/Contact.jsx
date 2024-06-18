@@ -1,5 +1,6 @@
 //import { useState } from "react";
 import { BiLogoWhatsapp, BiPhone, BiLogoInstagram, BiEnvelope, BiMap } from "react-icons/bi";
+import "./Contact.css"
 //const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 export default function Contact() {
@@ -77,27 +78,27 @@ export default function Contact() {
   // };
 
   return (
-    <div className="container-fluid contact" style={{ paddingBottom: "3.5rem" }}>
+    <div className="container-fluid contact">
       <div className="row">
         <p className="fs-4 fw-semibold">Contacto</p>
-        <p className="fs-6">
+        <p className="fs-6 info">
           <div>
-            <BiLogoWhatsapp style={{ fontSize: "20px" }} /> (0341) 155709575
+            <BiLogoWhatsapp style={{ fontSize: "18px" }} /> (0341) 155709575
           </div>
           <div>
-            <BiPhone style={{ fontSize: "20px" }} /> (0341) 485 6263
+            <BiPhone style={{ fontSize: "18px" }} /> (0341) 485 6263
           </div>
           <div>
-            <BiLogoInstagram style={{ fontSize: "20px" }} /> abrasivosmesopotamica
+            <BiLogoInstagram style={{ fontSize: "18px" }} /> abrasivosmesopotamica
           </div>
           <div>
-            <BiEnvelope style={{ fontSize: "20px" }} /> info@abrasivosmesopotamica.com / ventas@abrasivosmesopatamica.com.ar
+            <BiMap style={{ fontSize: "18px" }} /> Maipú 1818, Rosario, Santa Fe
           </div>
           <div>
-            <BiMap style={{ fontSize: "20px" }} /> Maipú 1820, Rosario, Santa Fe
+            <BiEnvelope style={{ fontSize: "18px" }} /> info@abrasivosmesopotamica.com / ventas@abrasivosmesopatamica.com.ar
           </div>
         </p>
-        <div className="col-12 pb-4">
+        <div className="col-12">
           <iframe
             width="100%"
             height="450"

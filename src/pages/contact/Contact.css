@@ -3,3 +3,9 @@
   height: auto;
   width: 100%;
 }
+
+@media screen and (max-width: 499px) {
+  .info {
+    font-size: 12px;
+  }
+}
