@@ -83,7 +83,7 @@ export default function Contact() {
         <p className="fs-4 fw-semibold">Contacto</p>
         <p className="fs-6">
           <div>
-            <BiLogoWhatsapp style={{ fontSize: "19px" }} /> (0341) 155709575
+            <BiLogoWhatsapp style={{ fontSize: "20px" }} /> (0341) 155709575
           </div>
           <div>
             <BiPhone style={{ fontSize: "19px" }} /> (0341) 485 6263
