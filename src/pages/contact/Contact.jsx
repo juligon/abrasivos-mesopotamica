@@ -1,103 +1,103 @@
-import { useState } from "react";
-import { BiLogoWhatsapp, BiPhone, BiLogoInstagram, BiEnvelope } from "react-icons/bi";
+//import { useState } from "react";
+import { BiLogoWhatsapp, BiPhone, BiLogoInstagram, BiEnvelope, BiMap } from "react-icons/bi";
 //const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 export default function Contact() {
-  const [input, setInput] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  // const [input, setInput] = useState({
+  //   name: "",
+  //   email: "",
+  //   subject: "",
+  //   message: "",
+  // });
 
-  const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
-  const [hasErrors, setHasErrors] = useState(false);
+  // const [errors, setErrors] = useState({});
+  // const [submitted, setSubmitted] = useState(false);
+  // const [hasErrors, setHasErrors] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInput((prevInput) => ({
-      ...prevInput,
-      [name]: value,
-    }));
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setInput((prevInput) => ({
+  //     ...prevInput,
+  //     [name]: value,
+  //   }));
 
-    // Validate the form every time an input changes
-    const validationErrors = validate({ ...input, [name]: value });
-    setErrors(validationErrors);
-    setHasErrors(Object.keys(validationErrors).length > 0);
-  };
+  //   // Validate the form every time an input changes
+  //   const validationErrors = validate({ ...input, [name]: value });
+  //   setErrors(validationErrors);
+  //   setHasErrors(Object.keys(validationErrors).length > 0);
+  // };
 
-  const validate = (fields) => {
-    const newErrors = {};
-    if (!fields.name) newErrors.name = "El nombre es obligatorio.";
-    if (!fields.email) {
-      newErrors.email = "El email es obligatorio.";
-    } else if (!/\S+@\S+\.\S+/.test(fields.email)) {
-      newErrors.email = "El email no es válido.";
-    }
-    if (!fields.subject) newErrors.subject = "El asunto es obligatorio.";
-    if (!fields.message) newErrors.message = "El mensaje es obligatorio.";
-    return newErrors;
-  };
+  // const validate = (fields) => {
+  //   const newErrors = {};
+  //   if (!fields.name) newErrors.name = "El nombre es obligatorio.";
+  //   if (!fields.email) {
+  //     newErrors.email = "El email es obligatorio.";
+  //   } else if (!/\S+@\S+\.\S+/.test(fields.email)) {
+  //     newErrors.email = "El email no es válido.";
+  //   }
+  //   if (!fields.subject) newErrors.subject = "El asunto es obligatorio.";
+  //   if (!fields.message) newErrors.message = "El mensaje es obligatorio.";
+  //   return newErrors;
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    const validationErrors = validate(input);
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      setHasErrors(true);
-      setSubmitted(false);
-      return;
-    }
-    setErrors({});
-    setHasErrors(false);
+  //   const validationErrors = validate(input);
+  //   if (Object.keys(validationErrors).length > 0) {
+  //     setErrors(validationErrors);
+  //     setHasErrors(true);
+  //     setSubmitted(false);
+  //     return;
+  //   }
+  //   setErrors({});
+  //   setHasErrors(false);
 
-    const form = e.target;
-    const formData = new FormData(form);
+  //   const form = e.target;
+  //   const formData = new FormData(form);
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => {
-        setSubmitted(true);
-        setInput({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
-      })
-      .catch((error) => {
-        setHasErrors(true);
-        alert(error);
-      });
-  };
+  //   fetch("/", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //     body: new URLSearchParams(formData).toString(),
+  //   })
+  //     .then(() => {
+  //       setSubmitted(true);
+  //       setInput({
+  //         name: "",
+  //         email: "",
+  //         subject: "",
+  //         message: "",
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       setHasErrors(true);
+  //       alert(error);
+  //     });
+  // };
 
   return (
     <div className="container-fluid contact" style={{ paddingBottom: "3.5rem" }}>
       <div className="row">
         <p className="fs-4 fw-semibold">Contacto</p>
-        <p style={{ fontSize: "12px" }}>
+        <p className="fs-6">
           <div>
-            <BiLogoWhatsapp style={{ fontSize: "18px" }} /> (0341) 155709575
+            <BiLogoWhatsapp style={{ fontSize: "20px" }} /> (0341) 155709575
           </div>
           <div>
-            <BiPhone style={{ fontSize: "18px" }} /> (0341) 485 6263
+            <BiPhone style={{ fontSize: "20px" }} /> (0341) 485 6263
           </div>
           <div>
-            <BiLogoInstagram style={{ fontSize: "18px" }} /> abrasivosmesopotamica
+            <BiLogoInstagram style={{ fontSize: "20px" }} /> abrasivosmesopotamica
           </div>
           <div>
-            <BiEnvelope style={{ fontSize: "18px" }} /> info@abrasivosmesopotamica.com.ar / ventas@abrasivosmesopatamica.com.ar
+            <BiEnvelope style={{ fontSize: "20px" }} /> info@abrasivosmesopotamica.com / ventas@abrasivosmesopatamica.com.ar
           </div>
-          {/* <div>
-            <BiMap style={{ fontSize: "18px" }} /> Maipú 1820, Rosario, Santa Fe
-          </div> */}
+          <div>
+            <BiMap style={{ fontSize: "20px" }} /> Maipú 1820, Rosario, Santa Fe
+          </div>
         </p>
-        <div className="col-12 col-md-6 pb-4">
+        <div className="col-12 pb-4">
           <iframe
             width="100%"
             height="430"
@@ -107,7 +107,7 @@ export default function Contact() {
             allowFullScreen
           ></iframe>
         </div>
-        <div className="col-12 col-md-6 pb-4">
+        {/* <div className="col-12 col-md-6 pb-4">
           <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
             <input type="hidden" name="form-name" value="contact" />
             <div className="mb-3">
@@ -190,7 +190,7 @@ export default function Contact() {
               Por favor, corrige los errores en el formulario antes de enviar.
             </div>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );

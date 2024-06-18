@@ -14,7 +14,7 @@ export default function Products() {
 			<p className="fs-4 fw-semibold">Productos</p>
 			<p className="fs-6">
 				Ponemos a disposición los catálogos de nuestras marcas. Para
-				presupuestos enviar mensaje de whatsapp o al formulario de contacto.
+				presupuestos enviar mail o mensaje de whatsapp.
 			</p>
 			<div className="container products">
 				<div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 pt-4">
