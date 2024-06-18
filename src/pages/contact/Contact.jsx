@@ -100,7 +100,7 @@ export default function Contact() {
         <div className="col-12 pb-4">
           <iframe
             width="100%"
-            height="430"
+            height="450"
             frameBorder="0"
             style={{ border: 0 }}
             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAevot5U7YyMuTaRIoQKAEKsPWmxN0q0jY&q=Maipú+1820,Rosario,Santa+Fe,Argentina"
