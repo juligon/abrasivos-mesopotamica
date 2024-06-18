@@ -20,12 +20,13 @@ export default function Contact() {
       ...prevInput,
       [name]: value,
     }));
-  
+
+    // Validate the form every time an input changes
     const validationErrors = validate({ ...input, [name]: value });
     setErrors(validationErrors);
     setHasErrors(Object.keys(validationErrors).length > 0);
   };
-  
+
   const validate = (fields) => {
     const newErrors = {};
     if (!fields.name) newErrors.name = "El nombre es obligatorio.";
@@ -52,30 +53,22 @@ export default function Contact() {
     setErrors({});
     setHasErrors(false);
 
-    const formData = new FormData();
-    formData.append("name", input.name);
-    formData.append("email", input.email);
-    formData.append("subject", input.subject);
-    formData.append("message", input.message);
+    const form = e.target;
+    const formData = new FormData(form);
 
-    fetch("/send_mail.php", {
+    fetch("/", {
       method: "POST",
-      body: formData,
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
     })
-      .then((response) => response.text())
-      .then((data) => {
-        if (data.includes("Gracias")) {
-          setSubmitted(true);
-          setInput({
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-          });
-        } else {
-          setHasErrors(true);
-          alert(data);
-        }
+      .then(() => {
+        setSubmitted(true);
+        setInput({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
       })
       .catch((error) => {
         setHasErrors(true);
@@ -98,8 +91,11 @@ export default function Contact() {
             <BiLogoInstagram style={{ fontSize: "18px" }} /> abrasivosmesopotamica
           </div>
           <div>
-            <BiEnvelope style={{ fontSize: "18px" }} /> info@abrasivosmesopotamica.com / ventas@abrasivosmesopatamica.com.ar
+            <BiEnvelope style={{ fontSize: "18px" }} /> info@abrasivosmesopotamica.com.ar / ventas@abrasivosmesopatamica.com.ar
           </div>
+          {/* <div>
+            <BiMap style={{ fontSize: "18px" }} /> Maipú 1820, Rosario, Santa Fe
+          </div> */}
         </p>
         <div className="col-12 col-md-6 pb-4">
           <iframe
@@ -112,7 +108,8 @@ export default function Contact() {
           ></iframe>
         </div>
         <div className="col-12 col-md-6 pb-4">
-          <form name="contact" method="POST" onSubmit={handleSubmit}>
+          <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+            <input type="hidden" name="form-name" value="contact" />
             <div className="mb-3">
               <label htmlFor="name" className="form-label">
                 Nombre
