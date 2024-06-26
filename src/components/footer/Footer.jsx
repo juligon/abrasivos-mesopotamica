@@ -10,7 +10,7 @@ export default function Footer() {
 	return (
 		<div className="container-fluid zocalo-contacto">
 			<div className="row pt-3 pb-3 align-items-center footer-content">
-				<div className="col logo-container">
+				<div className="col logo-container mb-2">
 					<img id="logo" src={Logo} alt="Logo" className="logo" />
 				</div>
 				<div className="col icons-container">
