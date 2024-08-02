@@ -118,32 +118,16 @@ export default function Home() {
 			<div className="container-fluid marcas text-center pb-4">
 				<div className="row g-4 pt-1 pb-1">
 					<div className="col">
-						<img
-							src={logoFortex}
-							alt="logo-fortex"
-							className="logo"
-						/>
+						<img src={logoFortex} alt="logo-fortex" className="logo" />
 					</div>
 					<div className="col">
-						<img
-							src={logoTyrolit}
-							alt="logo-tyrolit"
-							className="logo"
-						/>
+						<img src={logoTyrolit} alt="logo-tyrolit" className="logo" />
 					</div>
 					<div className="col">
-						<img
-							src={logoDobleA}
-							alt="logo-doble-a"
-							className="logo"
-						/>
+						<img src={logoDobleA} alt="logo-doble-a" className="logo" />
 					</div>
 					<div className="col">
-						<img 
-							src={logoEzeta} 
-							alt="logo-ezeta"
-							className="logo"
-						/>
+						<img src={logoEzeta} alt="logo-ezeta" className="logo" />
 					</div>
 				</div>
 			</div>

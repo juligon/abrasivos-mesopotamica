@@ -1,10 +1,6 @@
 import "./Footer.css";
 import Logo from "../../assets/logo/logo-abrasivos-mesopotamica-color.png";
-import {
-	BiLogoWhatsapp,
-	BiLogoInstagram,
-	BiEnvelope,
-} from "react-icons/bi";
+import { BiLogoWhatsapp, BiLogoInstagram, BiEnvelope } from "react-icons/bi";
 
 export default function Footer() {
 	return (
@@ -14,13 +10,25 @@ export default function Footer() {
 					<img id="logo" src={Logo} alt="Logo" className="logo" />
 				</div>
 				<div className="col icons-container">
-					<a href="https://wa.me/5493415709575" target="_blank" rel="noreferrer">
+					<a
+						href="https://wa.me/5493415709575"
+						target="_blank"
+						rel="noreferrer"
+					>
 						<BiLogoWhatsapp className="icon" />
 					</a>
-					<a href="https://www.instagram.com/abrasivosmesopotamica" target="_blank" rel="noreferrer">
+					<a
+						href="https://www.instagram.com/abrasivosmesopotamica"
+						target="_blank"
+						rel="noreferrer"
+					>
 						<BiLogoInstagram className="icon" />
 					</a>
-					<a href="mailto:info@abrasivosmesopotamica.com" target="_blank" rel="noreferrer">
+					<a
+						href="mailto:info@abrasivosmesopotamica.com"
+						target="_blank"
+						rel="noreferrer"
+					>
 						<BiEnvelope className="icon" />
 					</a>
 				</div>
@@ -48,5 +56,3 @@ export default function Footer() {
 		</div>
 	);
 }
-
-
